@@ -33,7 +33,7 @@ metadata {
 
 preferences {
 	section("Choose a temperature sensor... "){
-		input "sensor", "capability.temperatureMeasurement", title: "Sensor"
+		input "Sensor", "capability.temperatureMeasurement", title: "Sensor"
 	}
 	section("Select the heater or air conditioner outlet(s)... "){
 		input "outlets", "capability.switch", title: "Outlets", multiple: true
@@ -170,9 +170,13 @@ def evaluate(temp, heatingSetpoint, coolingSetpoint) {
 	
     def current = device.currentValue("thermostatOperatingState")
 	def mode = device.currentValue("thermostatMode")
-	
+	//def currentStateofSensor = Sensor.temperature
+    
+   // log.debug "temperature value as a string: ${currentStateofSensor.value}"
+    //log.debug "time this temperature record was created: ${currentState.date}"
     log.debug ("Mode is : $mode")
     log.debug ("Current State: $current")
+ 
 
 	
     def heating = false
