@@ -29,21 +29,10 @@ metadata {
 		command "coolUp"
 		command "coolDown"
 		command "setTemperature", ["number"]
+    
 	}
 
 preferences {
-	section("Choose a temperature sensor... "){
-		input "Sensor", "capability.temperatureMeasurement", title: "Sensor"
-	}
-	section("Select the heater or air conditioner outlet(s)... "){
-		input "outlets", "capability.switch", title: "Outlets", multiple: true
-	}
-	section("Set the default temperature..."){
-		input "setpoint", "decimal", title: "Set Temp"
-	}
-	section("But never above this value..."){
-		input "emergencySetpoint", "decimal", title: "Emer Temp", required: false
-	}
 	section("Define the threashold for for heating..."){
 		input "threshold", "decimal", title: "Threshold Temp"	
 	}
